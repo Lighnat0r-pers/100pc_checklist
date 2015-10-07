@@ -1893,7 +1893,7 @@ TopFunAddress3CustomCode:
 if VersionOffset = -0x2FF8 ; Game is version JP
 {
 	; This fixes the offset for the JP version for these addresses.
-	MemoryValue := Memory(3, ReadAddress+VersionOffset - 8, ReadLength)
+	MemoryValue := Memory(3, ReadAddress+VersionOffset + 8, ReadLength)
 }
 return
 
