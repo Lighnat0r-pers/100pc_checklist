@@ -2685,7 +2685,7 @@ MemoryValue := ((MemoryValue >= 12) ? 1 : 0 )
 return
 
 TaxiDriverAddress1CustomCode:
-if Memory(3, 0x0074B884+VersionOffset, 4) = 1 ; Taxi driver completed
+if Memory(3, 0x0075B9C4+VersionOffset, 4) = 1 ; Taxi driver completed
 {
 	TotalRequired := 1
 	MemoryValue := 1
