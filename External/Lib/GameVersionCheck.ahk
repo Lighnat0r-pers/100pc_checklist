@@ -49,6 +49,10 @@ GameVersionCheck(GameName)
 			return 0 ; Version Steam 1.2 and retail 1.153
 		Msgbox Error`: The script could not determine the version of Bully
 	}
+	Else if GameName = SimpsonsHAR
+	{
+		return 0 ; No version checking yet.
+	}
 	Else 
 		msgbox Error`: Invalid game`: %GameName%.
 } 
