@@ -2752,18 +2752,16 @@ Subheadings:
 */
 
 SimpsonsHARPercentageOnlyRequirements:
-Name = Points Completed
+Name = Percentage Completed
 IconName = HARPercent
-TotalRequired = 413
 Address1 := 0x6C8984
 Address1CustomCode = 1
 gosub %CurrentLoopCode%
 return
 
 SimpsonsHARRequirements:
-Name = Points Completed
+Name = Percentage Completed
 IconName = HARPercent
-TotalRequired = 413
 Address1 := 0x6C8984
 Address1CustomCode = 1
 gosub %CurrentLoopCode%
@@ -2817,7 +2815,8 @@ Address1CustomCode = 1
 gosub %CurrentLoopCode%
 Name = Movies
 IconName = HARMovies
-TotalRequired = 7
+;TotalRequired = 7
+TotalRequired = 1
 Address1 := 0x6C8984
 Address1CustomCode = 1
 gosub %CurrentLoopCode%
@@ -2944,21 +2943,41 @@ Level5Movie := Memory(3, Memory(5, 0x6C8984, 0xBDC), 4)
 Level6Movie := Memory(3, Memory(5, 0x6C8984, 0xE48), 4)
 Level7Movie := Memory(3, Memory(5, 0x6C8984, 0x10B4), 4)
 BonusMovie := Memory(3, Memory(5, 0x6C8984, 0x704), 4)
-MemoryValue := L1CollectorCards + L1Wasps + L1Gags + L1CharacterClothing + L1Vehicles + L1TimeTrial + L1CircuitRace + L1CheckpointRace + L1M1 + L1M2 + L1M3 + L1M4 + L1M5 + L1M6 + L1M7 + L1BM + L2CollectorCards + L2Wasps + L2Gags + L2CharacterClothing + L2Vehicles + L2TimeTrial + L2CircuitRace + L2CheckpointRace + L2M1 + L2M2 + L2M3 + L2M4 + L2M5 + L2M6 + L2M7 + L2BM + L3CollectorCards + L3Wasps + L3Gags + L3CharacterClothing + L3Vehicles + L3TimeTrial + L3CircuitRace + L3CheckpointRace + L3M1 + L3M2 + L3M3 + L3M4 + L3M5 + L3M6 + L3M7 + L3BM + L4CollectorCards + L4Wasps + L4Gags + L4CharacterClothing + L4Vehicles + L4TimeTrial + L4CircuitRace + L4CheckpointRace + L4M1 + L4M2 + L4M3 + L4M4 + L4M5 + L4M6 + L4M7 + L4BM + L5CollectorCards + L5Wasps + L5Gags + L5CharacterClothing + L5Vehicles + L5TimeTrial + L5CircuitRace + L5CheckpointRace + L5M1 + L5M2 + L5M3 + L5M4 + L5M5 + L5M6 + L5M7 + L5BM + L6CollectorCards + L6Wasps + L6Gags + L6CharacterClothing + L6Vehicles + L6TimeTrial + L6CircuitRace + L6CheckpointRace + L6M1 + L6M2 + L6M3 + L6M4 + L6M5 + L6M6 + L6M7 + L6BM + L7CollectorCards + L7Wasps + L7Gags + L7CharacterClothing + L7Vehicles + L7TimeTrial + L7CircuitRace + L7CheckpointRace + L7M1 + L7M2 + L7M3 + L7M4 + L7M5 + L7M6 + L7M7 + L7BM + Level1Movie + Level2Movie + Level4Movie + Level5Movie + Level6Movie + Level7Movie + BonusMovie + L1BM + L2BM + L3BM + L4BM + L5BM + L6BM + L7BM
+
+SetFormat, Float, 0.20
+
+WaspsPercentage := ((L1Wasps + L2Wasps + L3Wasps + L4Wasps + L5Wasps + L6Wasps + L7Wasps) / 140) * (99/8)
+CollectorCardsPercentage := ((L1CollectorCards + L2CollectorCards + L3CollectorCards + L4CollectorCards + L5CollectorCards + L6CollectorCards + L7CollectorCards) / 49) * (99/8)
+CharacterClothingPercentage := ((L1CharacterClothing + L2CharacterClothing + L3CharacterClothing + L4CharacterClothing + L5CharacterClothing + L6CharacterClothing + L7CharacterClothing) / 21) * (99/8)
+BMPercentage := ((L1BM + L2BM + L3BM + L4BM + L5BM + L6BM + L7BM) / 7) * (99/8)
+GagsPercentage := (L1Gags/15)*((99/8)/7) + (L2Gags/11)*((99/8)/7) + (L3Gags/11)*((99/8)/7) + (L4Gags/15)*((99/8)/7) + (L5Gags/6)*((99/8)/7) + (L6Gags/11)*((99/8)/7) + (L7Gags/15)*((99/8)/7)
+
+VehiclesPercentage := L1Vehicles + L2Vehicles + L3Vehicles + L4Vehicles + L5Vehicles + L6Vehicles + L7Vehicles + L1BM + L2BM + L3BM + L4BM + L5BM + L6BM + L7BM
 if (L1TimeTrial = 1) and (L1CircuitRace = 1) and (L1CheckpointRace = 1)
-	MemoryValue++
+	VehiclesPercentage++
 if (L2TimeTrial = 1) and (L2CircuitRace = 1) and (L2CheckpointRace = 1)
-	MemoryValue++
+	VehiclesPercentage++
 if (L3TimeTrial = 1) and (L3CircuitRace = 1) and (L3CheckpointRace = 1)
-	MemoryValue++
+	VehiclesPercentage++
 if (L4TimeTrial = 1) and (L4CircuitRace = 1) and (L4CheckpointRace = 1)
-	MemoryValue++
+	VehiclesPercentage++
 if (L5TimeTrial = 1) and (L5CircuitRace = 1) and (L5CheckpointRace = 1)
-	MemoryValue++
+	VehiclesPercentage++
 if (L6TimeTrial = 1) and (L6CircuitRace = 1) and (L6CheckpointRace = 1)
-	MemoryValue++
+	VehiclesPercentage++
 if (L7TimeTrial = 1) and (L7CircuitRace = 1) and (L7CheckpointRace = 1)
-	MemoryValue++
+	VehiclesPercentage++
+VehiclesPercentage := (VehiclesPercentage/35) * (99/8)
+
+StoryMissionsPercentage := ((L1M1 + L1M2 + L1M3 + L1M4 + L1M5 + L1M6 + L1M7 + L2M1 + L2M2 + L2M3 + L2M4 + L2M5 + L2M6 + L2M7 + L3M1 + L3M2 + L3M3 + L3M4 + L3M5 + L3M6 + L3M7 + L4M1 + L4M2 + L4M3 + L4M4 + L4M5 + L4M6 + L4M7 + L5M1 + L5M2 + L5M3 + L5M4 + L5M5 + L5M6 + L5M7 + L6M1 + L6M2 + L6M3 + L6M4 + L6M5 + L6M6 + L6M7 + L7M1 + L7M2 + L7M3 + L7M4 + L7M5 + L7M6 + L7M7) / 49) * (99/8)
+
+StreetRacesPercentage := ((L1TimeTrial + L1CircuitRace + L1CheckpointRace + L2TimeTrial + L2CircuitRace + L2CheckpointRace + L3TimeTrial + L3CircuitRace + L3CheckpointRace + L4TimeTrial + L4CircuitRace + L4CheckpointRace + L5TimeTrial + L5CircuitRace + L5CheckpointRace + L6TimeTrial + L6CircuitRace + L6CheckpointRace + L7TimeTrial + L7CircuitRace + L7CheckpointRace) / 21) * (99/8)
+
+TotalPercentage := WaspsPercentage + CollectorCardsPercentage + CharacterClothingPercentage + BMPercentage + GagsPercentage + VehiclesPercentage + StoryMissionsPercentage + StreetRacesPercentage + BonusMovie
+
+MemoryValue := TotalPercentage
+
+SetFormat, Float, 0.%DecimalPlaces%
 return
 
 HARStoryMissionsAddress1CustomCode:
@@ -3008,7 +3027,8 @@ MemoryValue := L1Gags + L2Gags + L3Gags + L4Gags + L5Gags + L6Gags + L7Gags
 return
 
 HARMoviesAddress1CustomCode:
-MemoryValue := Level1Movie + Level2Movie + Level4Movie + Level5Movie + Level6Movie + Level7Movie + BonusMovie
+;MemoryValue := Level1Movie + Level2Movie + Level4Movie + Level5Movie + Level6Movie + Level7Movie + BonusMovie
+MemoryValue := BonusMovie
 return
 
 ; ######################################################################################################
