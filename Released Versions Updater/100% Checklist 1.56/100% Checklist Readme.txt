@@ -17,6 +17,7 @@ List of supported games:
 GTA Vice City
 GTA San Andreas
 GTA III
+The Simpsons: Hit & Run
 
 Contact me if you want support for another game, but keep in mind that this is not a trivial process so I won't make any promises.
 
@@ -59,8 +60,8 @@ It will automatically detect which version is running.
 I don't have access to a CD, so I can't test if the retail 1.0 and 1.1 also work or not (contact me if you have one of these so I can add support).
 
 The Simpsons: Hit & Run:
-No version checking yet
-
+The program is currently compatible with the following game versions:
+* FairLight No-CD
 
 Known Issues:
 * 100% transparency will make everything that has the same colour as the background transparent. (For this reason, when using transparency don't set the background colour

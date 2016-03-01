@@ -93,7 +93,7 @@ menu, tray, icon, %ImageFilename%, 1, 1
 ; Configure the auto updater. The auto updater only triggers if the program is compiled, otherwise
 ; the program will go to the create arrays subroutine immediately, skipping the auto updater.
 CurrentVersion = 1.56
-VersionURL := "http://pastebin.com/download.php?i=pc9QbQCK"
+VersionURL := "http://pastebin.com/raw/pc9QbQCK"
 ProgramName := "100% Checklist"
 gosub FileList
 If A_IsCompiled = 1
