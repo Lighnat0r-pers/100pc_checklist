@@ -10,7 +10,7 @@ You have the option of showing the requirements on the output window in either t
 Start the program and it will update automatically (if the game is already running) or the program will wait until the game is started and then update automatically. It will work with both loading a game and starting a new game.
 
 V1.58 Updates:
-Added support for the Japanese No-CD version of GTA III
+Added support for the Japanese No-CD version of GTA III (by zoton2).
 
 
 List of supported games:
