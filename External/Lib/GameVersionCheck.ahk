@@ -40,6 +40,8 @@ GameVersionCheck(GameName)
 			return -0x10140 ; Version 1.1 NoCD
 		if Memory(3, 0x005C6FD0, 4) = 0x53E58955
 			return  0 ; Version 1.1 Steam
+		if Memory(3, 0x009F3C17, 4) = 0x6AEC8B55
+			return -0x21E0 ; Version Japanese
 		Msgbox Error`: The script could not determine the version of GTA 3
 	}
 	Else if GameName = Bully
