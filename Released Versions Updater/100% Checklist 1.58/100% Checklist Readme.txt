@@ -11,6 +11,7 @@ Start the program and it will update automatically (if the game is already runni
 
 V1.58 Updates:
 Added support for the Japanese No-CD version of GTA III (by zoton2).
+Added support for the NewSteam r2 version of GTA San Andreas (offset found by tduva).
 
 
 List of supported games:
@@ -44,6 +45,7 @@ The program is currently compatible with the following game versions:
 * Version 1.01 (Steam (DE?))
 * Version 2.0 EU/AUS
 * Version 3.0 (Steam)
+* Version NewSteam r2
 It will automatically detect which version is running.
 Because I don't have access to the following versions, they are not yet supported (contact me if you have one of these so I can add support):
 * Version 1.0 DE
