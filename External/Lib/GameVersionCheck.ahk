@@ -29,6 +29,9 @@ GameVersionCheck(GameName)
 			return 0x75130 ; Version 3.0 Steam
 		if Memory(3, 0x0085DEDA, 4) = 0x94BF
 			return 0x75770 ; Version 1.01 Steam ?
+		ModuleBase := GetProcessBaseAddress()
+		if Memory(3, ModuleBase + 0x0046D940, 4) = 0x8B55FF8B
+			return (ModuleBase - 0x00400000 + 0x77970) ; NewSteam r2 version
 		Msgbox Error`: The script could not determine the version of GTA San Andreas
 	}
 	Else if GameName = GTA3
